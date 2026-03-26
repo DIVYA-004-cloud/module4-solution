@@ -7,20 +7,31 @@
 <body>
 
 <h1>Module 4 Solution</h1>
-<p>Open console to see output (Right click → Inspect → Console)</p>
+<div id="output"></div>
 
 <script>
 (function () {
   var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
 
+  var outputDiv = document.getElementById("output");
+
   for (var i = 0; i < names.length; i++) {
     var firstLetter = names[i].charAt(0).toLowerCase();
+    var message = "";
 
     if (firstLetter === 'j') {
-      console.log("Goodbye " + names[i]);
+      message = "Goodbye " + names[i];
     } else {
-      console.log("Hello " + names[i]);
+      message = "Hello " + names[i];
     }
+
+    // Console output (assignment requirement)
+    console.log(message);
+
+    // Page output (extra)
+    var p = document.createElement("p");
+    p.textContent = message;
+    outputDiv.appendChild(p);
   }
 })();
 </script>
